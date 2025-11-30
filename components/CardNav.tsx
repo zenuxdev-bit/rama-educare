@@ -160,7 +160,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
   return (
     <div
-      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] z-101 top-[1.2em] md:top-[2em] ${className}`}
     >
       <nav
         ref={navRef}
@@ -228,6 +228,34 @@ const CardNav: React.FC<CardNavProps> = ({
                     className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
                     href={lnk.href}
                     aria-label={lnk.ariaLabel}
+                    onClick={(e) => {
+                      // Handle internal anchor links
+                      if (lnk.href.startsWith('/#')) {
+                        e.preventDefault();
+                        const targetId = lnk.href.substring(2); // Remove '/#'
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                          // Close navbar first
+                          setIsExpanded(false);
+                          setIsHamburgerOpen(false);
+                          
+                          // Smooth scroll to element after navbar closes
+                          setTimeout(() => {
+                            targetElement.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start',
+                            });
+                          }, 150);
+                        }
+                      } else {
+                        // For external links, just close navbar
+                        setTimeout(() => {
+                          setIsExpanded(false);
+                          setIsHamburgerOpen(false);
+                        }, 100);
+                      }
+                    }}
                   >
                     <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
                     {lnk.label}

@@ -4,6 +4,15 @@ import "./globals.css";
 import Footer from "../components/Footer";
 
 import { Poppins } from 'next/font/google'
+import Navbar from "@/components/Navbar";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
+
+const SmoothCursorWrapper = () => {
+  if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+    return <SmoothCursor />;
+  }
+  return null;
+};
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -33,9 +42,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased lg:cursor-none`}
       >
-        
+        <div className="hidden lg:block">
+          <SmoothCursor />
+        </div>
+        <Navbar/>
         <main className={poppins.className}>{children}</main>
         <Footer />
 

@@ -1,76 +1,188 @@
 import {
   FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
   FaXTwitter,
-  FaYoutube,
-  FaLinkedin,
 } from "react-icons/fa6";
-import { IoLogoTiktok } from "react-icons/io5";
 import Image from "next/image";
+import Link from "next/link";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-gray-200 bg-white py-14 mb-30 pt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className={`${poppins.className} w-full border-t border-[#E2E8F0] bg-white py-12 md:py-16`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10">
+          {/* LEFT SECTION - Company Info */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <Image
+                src="/logo.png"
+                alt="RAMA Educare Logo"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+              <h2 className="text-xl font-bold text-[#1B4F8C]">RAMA Educare</h2>
+            </Link>
 
-        {/* LEFT SECTION */}
-        <div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/dsn2.jpg" 
-              alt="EduFor Logo"
-              width={32}
-              height={32}
-            />
-            <h2 className="text-2xl font-medium text-gray-900">RamaEducare</h2>
+            <p className="text-[#64748B] text-sm md:text-base max-w-sm mb-6">
+              Your trusted partner for post-entrance admission counseling. Helping students secure seats in top universities across India for over 15 years.
+            </p>
+
+            {/* Contact Info */}
+            <div className="space-y-2 text-sm text-[#64748B]">
+              <p>
+                <span className="font-semibold text-[#334155]">Phone:</span>{" "}
+                <a href="tel:+911234567890" className="hover:text-[#1B4F8C]">
+                  +91 12345 67890
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-[#334155]">Email:</span>{" "}
+                <a href="mailto:info@ramaeducare.com" className="hover:text-[#1B4F8C]">
+                  info@ramaeducare.com
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-[#334155]">Address:</span> Jamshedpur, Jharkhand, India
+              </p>
+            </div>
+
+            {/* SOCIAL ICONS - Commented out for now */}
+            {/* <div className="flex items-center gap-4 mt-6">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#FAFAFA] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:bg-[#1B4F8C] hover:text-white hover:border-[#1B4F8C] transition-all duration-200"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#FAFAFA] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:bg-[#1B4F8C] hover:text-white hover:border-[#1B4F8C] transition-all duration-200"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={18} />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#FAFAFA] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:bg-[#1B4F8C] hover:text-white hover:border-[#1B4F8C] transition-all duration-200"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-[#FAFAFA] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:bg-[#1B4F8C] hover:text-white hover:border-[#1B4F8C] transition-all duration-200"
+                aria-label="Twitter"
+              >
+                <FaXTwitter size={18} />
+              </a>
+            </div> */}
           </div>
 
-          <p className="mt-4 text-xl text-gray-600 max-w-lg">
-            We will help you to study at your dream University.
-          </p>
+          {/* SERVICES */}
+          <div>
+            <h3 className="text-base font-semibold text-[#1B4F8C] mb-4">Services</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/#services" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  University Admission Counseling
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Admission Assistance
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Documentation Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Profile Building
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Career Counseling
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-          {/* SOCIAL ICONS */}
-          <div className="flex items-center gap-4 mt-6 text-gray-700">
-            <FaInstagram size={22} className="hover:text-black cursor-pointer" />
-            <IoLogoTiktok size={22} className="hover:text-black cursor-pointer" />
-            <FaXTwitter size={22} className="hover:text-black cursor-pointer" />
-            <FaYoutube size={22} className="hover:text-black cursor-pointer" />
-            <FaLinkedin size={22} className="hover:text-black cursor-pointer" />
+          {/* COMPANY */}
+          <div>
+            <h3 className="text-base font-semibold text-[#1B4F8C] mb-4">Company</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/#about" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contact" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/faqs" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  FAQs
+                </Link>
+              </li>
+              <li>
+                <Link href="/#testimonials" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Testimonials
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* LEGAL */}
+          <div>
+            <h3 className="text-base font-semibold text-[#1B4F8C] mb-4">Legal</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/privacy-policy" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-conditions" className="text-sm text-[#64748B] hover:text-[#1B4F8C] transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* SERVICES */}
-        <div>
-          <h3 className="text-2xl font-medium text-gray-900 mb-4">Services</h3>
-          <ul className="space-y-2 text-gray-700">
-            
-            <li className="text-lg">Scholarships</li>
-            <li className="text-lg">Personal Statement</li>
-            <li className="text-lg">Career Counselling</li>
-          </ul>
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-[#E2E8F0]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-[#64748B]">
+              © {new Date().getFullYear()} RAMA Educare. All rights reserved.
+            </p>
+            <p className="text-sm text-[#64748B]">
+              Made with passion by Devs @Zenux, Jharkhand
+            </p>
+          </div>
         </div>
-
-        {/* COMPANY */}
-        <div>
-          <h3 className="text-2xl font-medium text-gray-900 mb-4">Company</h3>
-          <ul className="space-y-2 text-gray-700">
-            <li className="text-lg">About us</li>
-            <li className="text-lg">Contact us</li>
-          
-            <li>FAQ</li>
-            
-          </ul>
-        </div>
-
-        {/* LEGAL */}
-        <div>
-          <h3 className="text-2xl font-medium text-gray-900 mb-4">Legal</h3>
-          <ul className="space-y-3 text-gray-700">
-           
-            <li className="text-lg">Privacy Policy</li>
-            <li className="text-lg">Terms & Conditions</li>
-          </ul>
-        </div>
-       
       </div>
     </footer>
   );

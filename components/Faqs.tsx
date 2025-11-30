@@ -10,34 +10,34 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What services do educational consultancies offer?",
+    question: "When should I start the counseling process after my entrance exam?",
     answer:
-      "They help students choose suitable colleges, guide with applications, scholarships, documentation, and provide overall admission support.",
+      "Ideally, start immediately after your results are declared. Early counseling helps you understand all available options and ensures you don't miss important deadlines for admissions and document submissions.",
   },
   {
-    question: "Do you help with scholarship applications?",
+    question: "Do you charge for counseling services?",
     answer:
-      "Yes, we guide you in finding relevant scholarships and assist with the application and documentation process.",
+      "We offer a free initial consultation to understand your profile and goals. Our detailed counseling and admission assistance services have transparent pricing with no hidden costs.",
   },
   {
-    question: "Can you guarantee university admission?",
+    question: "Which entrance exams do you provide counseling for?",
     answer:
-      "No consultancy can guarantee admission, but we maximize your chances with expert guidance and profile evaluation.",
+      "We provide counseling for JEE Main/Advanced, NEET, BITSAT, VITEEE, KIITEE, MET, and other major entrance exams for engineering, medical, and management courses across India.",
   },
   {
-    question: "Do you assist with student visa applications?",
+    question: "Can you help if I didn't get the rank I expected?",
     answer:
-      "Yes, we assist with visa documentation, interview preparation, and the overall visa application process.",
+      "Absolutely! We specialize in finding the best-fit universities and courses based on your actual rank. Our extensive network helps you explore options you might not have considered.",
   },
   {
-    question: "What services do educational consultancies offer?",
+    question: "What documents do I need for the admission process?",
     answer:
-      "We provide help in university selection, course selection, documentation, scholarship assistance, and visa support.",
+      "Typically, you'll need entrance exam scorecards, 10th & 12th mark sheets, category certificates (if applicable), ID proof, and photographs. We'll provide a complete checklist based on your selected universities.",
   },
   {
-    question: "Do you help with scholarship applications?",
+    question: "Do you assist with scholarship applications?",
     answer:
-      "Absolutely! We help identify eligible scholarships and ensure your application is strong and complete.",
+      "Yes, we guide you through available scholarship opportunities based on your merit, category, and financial background, and help with the complete application process.",
   },
 ];
 
@@ -49,38 +49,54 @@ const FAQsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 w-full relative">
+    <section className="py-16 md:py-24 w-full bg-white px-4">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-5xl font-medium mb-2">Frequently Asked Questions</h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
+        <div className="inline-block px-4 py-2 bg-[#FAFAFA] border border-[#E2E8F0] rounded-full mb-4">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#64748B] sm:text-sm ">
+            FAQs
+          </span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#1B4F8C] mt-3 mb-2">Frequently Asked Questions</h2>
+        <p className="text-[#64748B] max-w-xl mx-auto text-base md:text-lg">
           Quick answers to your most common questions.
         </p>
       </div>
 
       {/* FAQ List */}
-      <div className="max-w-2xl mx-auto px-4 flex flex-col gap-4">
+      <div className="max-w-3xl mx-auto px-4 flex flex-col gap-4">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-white border rounded-2xl px-6 py-4 shadow-sm cursor-pointer transition hover:shadow-md"
+            className="bg-white border border-[#E2E8F0] rounded-xl px-6 py-5 shadow-sm cursor-pointer transition hover:shadow-md"
             onClick={() => toggleFAQ(index)}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-medium">{faq.question}</h3>
+              <h3 className="text-base md:text-lg font-semibold text-[#1B4F8C] pr-4">{faq.question}</h3>
               {openIndex === index ? (
-                <FiMinus className="text-xl" />
+                <FiMinus className="text-xl text-[#F9A825] shrink-0" />
               ) : (
-                <FiPlus className="text-xl" />
+                <FiPlus className="text-xl text-[#1B4F8C] shrink-0" />
               )}
             </div>
 
             {/* ANSWER SECTION */}
             {openIndex === index && (
-              <p className="mt-3 text-gray-600 transition-all">{faq.answer}</p>
+              <p className="mt-4 text-[#64748B] text-sm md:text-base leading-relaxed transition-all">{faq.answer}</p>
             )}
           </div>
         ))}
+      </div>
+
+      {/* View All FAQs Button */}
+      <div className="text-center mt-12">
+        <a
+          href="/faqs"
+          className="inline-flex items-center gap-2 bg-[#F9A825] hover:bg-[#f5a000] text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200"
+        >
+          View All FAQs
+          <FiArrowRight />
+        </a>
       </div>
 
     </section>

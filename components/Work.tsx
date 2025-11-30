@@ -43,19 +43,24 @@ const steps: Step[] = [
 // ----------------------
 export default function Work() {
   return (
-    <section className="py-20 w-full flex flex-col items-center bg-white">
+    <section className="py-12 md:py-20 w-full flex flex-col items-center bg-white px-4">
 
       {/* ---------- HEADER ---------- */}
-      <h2 className="text-4xl font-bold text-center text-[#1B4F8C]">How We Work</h2>
-      <p className="mt-4 text-[#64748B] text-center text-lg max-w-2xl">
+      <div className="inline-block px-4 py-2 bg-#FAFAFA border border-[#E2E8F0] rounded-full mb-4">
+        <span className="text-xs font-semibold uppercase tracking-wider text-[#64748B] sm:text-sm">
+          Our Process
+        </span>
+      </div>
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1B4F8C] mt-3">How We Work</h2>
+      <p className="mt-4 text-[#64748B] text-center text-base md:text-lg max-w-2xl px-4">
         Our streamlined 4-step process to guide you from counseling to admission.
       </p>
 
       {/* ---------- TIMELINE CONTAINER ---------- */}
-      <div className="relative mt-16 flex flex-col items-center">
+      <div className="relative mt-12 lg:mt-16 flex flex-col items-start lg:items-center w-full max-w-6xl px-4">
 
         {/* Vertical Line */}
-        <div className="absolute top-0 left-1/2 w-1 bg-gray-200 h-full -translate-x-1/2" />
+        <div className="absolute top-0 left-6 lg:left-1/2 w-1 bg-gray-200 h-full lg:-translate-x-1/2" />
 
         {/* All Steps */}
         {steps.map((step, index) => (
@@ -64,8 +69,8 @@ export default function Work() {
       </div>
 
       {/* ---------- CTA BUTTON ---------- */}
-      <div className="mt-16 text-center">
-        <button className="bg-[#F9A825] hover:bg-[#f5a000] text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-200">
+      <div className="mt-12 md:mt-16 text-center">
+        <button className="bg-[#F9A825] hover:bg-[#f5a000] text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg transition-colors duration-200 text-sm md:text-base">
           Start Your Journey
         </button>
       </div>
@@ -108,7 +113,7 @@ function WorkStep({ step, index }: { step: Step; index: number }) {
   return (
     <div
       ref={ref}
-      className="relative w-full py-28"
+      className="relative w-full py-8 lg:py-28"
     >
 
       {/* ------------------------------------
@@ -122,8 +127,8 @@ function WorkStep({ step, index }: { step: Step; index: number }) {
           visible: { scale: 1.2, opacity: 1 },
         }}
         transition={{ duration: 0.4 }}
-        className="absolute left-1/2 -translate-x-1/2 top-0 w-12 h-12 rounded-full 
-                   flex items-center justify-center text-white font-bold shadow-lg z-20"
+        className="absolute left-6 lg:left-1/2 lg:-translate-x-1/2 top-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full 
+                   flex items-center justify-center text-white font-bold shadow-lg z-20 text-sm lg:text-base"
         style={{ backgroundColor: circleColors[index] }}
       >
         {step.id}
@@ -136,17 +141,18 @@ function WorkStep({ step, index }: { step: Step; index: number }) {
         animate={controls}
         initial="hidden"
         variants={{
-          hidden: { opacity: 0, x: isLeft ? -100 : 100 }, // slide from side
-          visible: { opacity: 1, x: 20 },
+          hidden: { opacity: 0, x: 0 },
+          visible: { opacity: 1, x: 0 },
         }}
         transition={{ duration: 0.9 }}
         className={`
-          w-[420px] p-8 bg-white border border-[#E2E8F0] shadow-lg rounded-xl absolute top-8 ml-15 mr-15 z-10
-          ${isLeft ? "left-[15%]" : "right-[15%]"}
+          w-[calc(100%-5rem)] lg:w-[420px] p-5 lg:p-8 bg-white border border-[#E2E8F0] shadow-lg rounded-xl 
+          relative lg:absolute top-0 lg:top-8 z-10 ml-16 lg:ml-0
+          ${isLeft ? "lg:left-[10%]" : "lg:right-[10%]"}
         `}
       >
-        <h3 className="text-xl font-semibold text-[#1B4F8C]">{step.title}</h3>
-        <p className="mt-2 text-[#64748B]">{step.description}</p>
+        <h3 className="text-base lg:text-xl font-semibold text-[#1B4F8C]">{step.title}</h3>
+        <p className="mt-2 text-sm lg:text-base text-[#64748B]">{step.description}</p>
       </motion.div>
 
     </div>
