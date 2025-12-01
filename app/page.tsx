@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import ServicesSection from '../components/Service'
 import FAQsSection from '../components/Faqs'
 import Work from '../components/Work'
@@ -10,10 +11,178 @@ import UniversityMarquee from '@/components/UniversityMarquee'
 import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
 
+export const metadata: Metadata = {
+  title: "RAMA Educare - Expert Admission Counseling After 12th in Jamshedpur | BTech, MTech, CLAT, Law, MBA",
+  description: "Leading admission counseling service in Jamshedpur, Jharkhand for BTech, MTech, CLAT, Law, MBA & management quota admissions. Direct university admissions with 15+ years experience. Get expert guidance for top universities across India.",
+  openGraph: {
+    title: "RAMA Educare - Expert Admission Counseling After 12th in Jamshedpur",
+    description: "Leading admission counseling service in Jamshedpur for BTech, MTech, CLAT, Law, MBA & management quota admissions. 15+ years experience, 500+ students placed.",
+    url: 'https://ramaeducare.com',
+    type: 'website',
+  },
+};
+
 
 const Page = () => {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "RAMA Educare",
+    "description": "Expert admission counseling after 12th for BTech, MTech, CLAT, Law, MBA and management quota admissions in Jamshedpur, Jharkhand",
+    "url": "https://ramaeducare.com",
+    "logo": "https://ramaeducare.com/logo.webp",
+    "image": "https://ramaeducare.com/logo.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bistupur",
+      "addressLocality": "Jamshedpur",
+      "addressRegion": "Jharkhand",
+      "postalCode": "831001",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-90317-33144",
+      "email": "ramaeducare2010@gmail.com",
+      "contactType": "Admissions Counseling",
+      "areaServed": ["IN", "Jharkhand", "Jamshedpur"],
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/ramaeducare",
+      "https://www.facebook.com/ramaeducare",
+      "https://www.linkedin.com/company/ramaeducare",
+      "https://twitter.com/ramaeducare"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500"
+    },
+    "priceRange": "₹₹"
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Admission Counseling",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "RAMA Educare"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Admission Counseling Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "BTech Admission Counseling",
+            "description": "Expert guidance for BTech admissions in top engineering colleges"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MTech Admission Counseling",
+            "description": "Specialized counseling for MTech admissions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "CLAT & Law Admission Counseling",
+            "description": "Complete guidance for law college admissions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MBA & Management Quota Admissions",
+            "description": "Direct admission assistance for management programs"
+          }
+        }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is admission counseling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Admission counseling is a professional service that helps students navigate the complex process of college and university admissions. Our experts guide you through entrance exam preparation, university selection, application procedures, and documentation to ensure you secure admission in your dream institution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which entrance exams do you provide counseling for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide comprehensive counseling for all major entrance exams including JEE Main, JEE Advanced, NEET, CLAT, CAT, MAT, CMAT, GATE, and many others. Our services cover engineering, medical, law, management, and various other professional courses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you help with management quota admissions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialize in management quota admissions for various courses including BTech, MTech, MBA, and medical programs. We work with reputed universities across India to facilitate direct admissions for eligible students."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do your counseling services cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our fee structure varies based on the service package you choose. We offer different packages for consultation, documentation support, and comprehensive admission assistance. Contact us for detailed pricing information tailored to your specific needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is RAMA Educare located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RAMA Educare is located in Bistupur, Jamshedpur, Jharkhand. We serve students from across India and provide both in-person and online counseling services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What documents are needed for admission counseling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic documents include your academic transcripts (10th and 12th marksheets), entrance exam scorecards, identity proof (Aadhar card), photographs, and category certificates if applicable. Specific requirements may vary based on the course and university you're applying to."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="relative min-h-screen w-full overflow-hidden bg-white">
         <nav> <Navbar /> </nav>
         {/* Animated Crowd Background - Very Subtle */}
@@ -22,7 +191,7 @@ const Page = () => {
         </div>
 
         {/* Clean White Background with subtle gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-gray-50/30" />
+        <div className="absolute inset-0 bg-linear-to-b from-white via-white to-gray-50/30" />
 
         {/* Hero Content */}
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center pt-20 pb-16">
@@ -68,11 +237,11 @@ const Page = () => {
               <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 lg:gap-16 text-sm md:text-base font-medium text-[#64748B]">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#F9A825]" />
-                  <span className="whitespace-nowrap">500+ Students Placed</span>
+                  <span className="whitespace-nowrap">5000+ Students Placed</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#1B4F8C]" />
-                  <span className="whitespace-nowrap">50+ Universities</span>
+                  <span className="whitespace-nowrap">100+ Universities</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#F9A825]" />

@@ -30,6 +30,7 @@ export interface CardNavProps {
   menuColor?: string;
   buttonBgColor?: string;
   buttonTextColor?: string;
+  onMenuToggle?: (isOpen: boolean) => void;
 }
 
 const CardNav: React.FC<CardNavProps> = ({
@@ -41,7 +42,8 @@ const CardNav: React.FC<CardNavProps> = ({
   baseColor = '#fff',
   menuColor,
   buttonBgColor,
-  buttonTextColor
+  buttonTextColor,
+  onMenuToggle
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -147,9 +149,11 @@ const CardNav: React.FC<CardNavProps> = ({
     if (!isExpanded) {
       setIsHamburgerOpen(true);
       setIsExpanded(true);
+      onMenuToggle?.(true);
       tl.play(0);
     } else {
       setIsHamburgerOpen(false);
+      onMenuToggle?.(false);
       tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
       tl.reverse();
     }
@@ -243,6 +247,7 @@ const CardNav: React.FC<CardNavProps> = ({
                           // Close navbar first
                           setIsExpanded(false);
                           setIsHamburgerOpen(false);
+                          onMenuToggle?.(false);
                           
                           // Smooth scroll to element after navbar closes
                           setTimeout(() => {
@@ -257,6 +262,7 @@ const CardNav: React.FC<CardNavProps> = ({
                         setTimeout(() => {
                           setIsExpanded(false);
                           setIsHamburgerOpen(false);
+                          onMenuToggle?.(false);
                         }, 100);
                       }
                     }}

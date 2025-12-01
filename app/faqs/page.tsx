@@ -4,6 +4,9 @@ import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
+// Note: Metadata cannot be exported from client components
+// SEO is handled through Head in the parent layout or a separate metadata file
+
 
 interface FAQItem {
   question: string;

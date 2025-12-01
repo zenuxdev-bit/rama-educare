@@ -68,7 +68,7 @@ const UniversityMarquee = () => {
                 {universities.map((uni, idx) => (
                   <div
                     key={`row2-${idx}`}
-                    className="flex h-20 w-32 shrink-0 items-center justify-center rounded-lg border border-[#E2E8F0]  p-4 sm:h-24 sm:w-40"
+                    className="flex h-20 w-32 shrink-0 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white p-4 sm:h-24 sm:w-40"
                   >
                     <img
                       src={uni.logo}

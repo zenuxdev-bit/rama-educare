@@ -2,8 +2,8 @@ import React from 'react';
 
 const AboutUs = () => {
   const stats = [
-    { value: "500+", label: "Students Guided", icon: "STUDENTS" },
-    { value: "50+", label: "Partner Universities", icon: "UNIVERSITIES" },
+    { value: "5000+", label: "Students Guided", icon: "STUDENTS" },
+    { value: "100+", label: "Partner Universities", icon: "UNIVERSITIES" },
     { value: "₹2Cr+", label: "Scholarships Secured", icon: "SCHOLARSHIPS" },
     { value: "15+", label: "Years of Excellence", icon: "EXPERIENCE" }
   ];

@@ -1,3 +1,14 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions - RAMA Educare",
+  description: "Read our terms and conditions for admission counseling services. Understand the terms of service, refund policy, and user responsibilities at RAMA Educare.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function TermsConditionsPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] pt-20">

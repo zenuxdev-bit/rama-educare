@@ -65,48 +65,48 @@ export default function Contact() {
     return isValid;
   };
 
- const handleSubmit = (e: FormEvent) => {
-  e.preventDefault();
-  if (!validateForm()) return;
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
 
-  // Build WhatsApp message
-  const message =
-    `*New Counseling Request*\n\n` +
-    `*Name:* ${formData.name}\n` +
-    `*Email:* ${formData.email}\n` +
-    `*Phone:* ${formData.phone}\n` +
-    `*City:* ${formData.city || "N/A"}\n` +
-    `*Entrance Exam:* ${formData.entranceExam || "N/A"}\n` +
-    `*Rank:* ${formData.rank || "N/A"}\n` +
-    `*Percentage:* ${formData.percentage || "N/A"}\n` +
-    `*School:* ${formData.school || "N/A"}\n` +
-    `*Preferred Course:* ${formData.preferredCourse || "N/A"}\n` +
-    `*Message:* ${formData.message || "N/A"}`;
+    // Build WhatsApp message
+    const message =
+      `*New Counseling Request*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*City:* ${formData.city || "N/A"}\n` +
+      `*Entrance Exam:* ${formData.entranceExam || "N/A"}\n` +
+      `*Rank:* ${formData.rank || "N/A"}\n` +
+      `*Percentage:* ${formData.percentage || "N/A"}\n` +
+      `*School:* ${formData.school || "N/A"}\n` +
+      `*Preferred Course:* ${formData.preferredCourse || "N/A"}\n` +
+      `*Message:* ${formData.message || "N/A"}`;
 
-  // Your WhatsApp number here (use only digits)
-  const phoneNumber = "919031733144"; // <--- CHANGE TO YOUR NUMBER
+    // Your WhatsApp number here (use only digits)
+    const phoneNumber = "919031733144"; // <--- CHANGE TO YOUR NUMBER
 
-  // Redirect to WhatsApp with message
-  const whatsappURL = `https://wa.me/${+919031733144}?text=${encodeURIComponent(
-    message
-  )}`;
+    // Redirect to WhatsApp with message
+    const whatsappURL = `https://wa.me/${+919031733144}?text=${encodeURIComponent(
+      message
+    )}`;
 
-  window.open(whatsappURL, "_blank");
+    window.open(whatsappURL, "_blank");
 
-  // Reset form
-  setFormData({
-    name: "",
-    email: "",
-    phone: "",
-    city: "",
-    entranceExam: "",
-    rank: "",
-    percentage: "",
-    school: "",
-    preferredCourse: "",
-    message: "",
-  });
-};
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      city: "",
+      entranceExam: "",
+      rank: "",
+      percentage: "",
+      school: "",
+      preferredCourse: "",
+      message: "",
+    });
+  };
 
   return (
     <section className="py-16 md:py-24 bg-[#FAFAFA] px-4">
@@ -142,9 +142,8 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border ${
-                      errors.name ? "border-red-500" : "border-[#E2E8F0]"
-                    } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
+                    className={`w-full px-4 py-3 border ${errors.name ? "border-red-500" : "border-[#E2E8F0]"
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
                     placeholder="Enter your full name"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -160,9 +159,8 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border ${
-                      errors.email ? "border-red-500" : "border-[#E2E8F0]"
-                    } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
+                    className={`w-full px-4 py-3 border ${errors.email ? "border-red-500" : "border-[#E2E8F0]"
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
                     placeholder="your.email@example.com"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -181,9 +179,8 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border ${
-                      errors.phone ? "border-red-500" : "border-[#E2E8F0]"
-                    } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
+                    className={`w-full px-4 py-3 border ${errors.phone ? "border-red-500" : "border-[#E2E8F0]"
+                      } rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B4F8C] text-[#334155]`}
                     placeholder="10-digit mobile number"
                   />
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
@@ -325,27 +322,26 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-[#1B4F8C] mb-4">Contact Information</h3>
-              
+
               <div className="space-y-4">
                 <div>
                   <p className="text-sm font-semibold text-[#334155] mb-1">Office Address</p>
                   <p className="text-[#64748B] text-sm">
-                    Jamshedpur, Jharkhand<br />
-                    India
+                    Rama Educare Jagannath Tower, 1st Floor <br /> Near Bhalubasa Chowk Jamshedpur – 831009 Jamshedpur, Jharkhand, India
                   </p>
                 </div>
 
                 <div>
                   <p className="text-sm font-semibold text-[#334155] mb-1">Phone</p>
                   <a href="tel:+911234567890" className="text-[#1B4F8C] text-sm hover:underline">
-                    +91 12345 67890
+                    +91 90317 33144
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-semibold text-[#334155] mb-1">Email</p>
                   <a href="mailto:info@ramaeducare.com" className="text-[#1B4F8C] text-sm hover:underline">
-                    info@ramaeducare.com
+                    ramaeducare2010@gmail.com 
                   </a>
                 </div>
 
@@ -378,31 +374,31 @@ export default function Contact() {
               </p>
             </div>
             <div className="w-full h-[400px] md:h-[500px]">
-<iframe
-  title="Rama Educare Location - Jamshedpur"
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.948224684655!2d86.2179468!3d22.8043823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e3001c7afdef%3A0xc6f1eb93b939ecca!2sRAMA%20EDUCARE!5e0!3m2!1sen!2sin!4v1764611664583!5m2!1sen!2sin"
-  width="100%"
-  height="100%"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
+              <iframe
+                title="Rama Educare Location - Jamshedpur"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.948224684655!2d86.2179468!3d22.8043823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e3001c7afdef%3A0xc6f1eb93b939ecca!2sRAMA%20EDUCARE!5e0!3m2!1sen!2sin!4v1764611664583!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
 
 
               {/* Note: Replace the src URL with your actual Google Maps embed link */
-              
-              <iframe 
-                className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px]  shadow-lg hover:shadow-xl transition-shadow duration-300"
-                title="OneRepMaax Gym Location - Dimna Road, Mango, Jamshedpur"
-                width="100%"
-                height="400"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=One+Rep+Maax+Gym,+Dimna+Road,+Jamshedpur&output=embed"
-                aria-label="Google Maps showing OneRepMaax Gym location at Dimna Road, Mango, Jamshedpur"
-              />
+
+                <iframe
+                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px]  shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  title="OneRepMaax Gym Location - Dimna Road, Mango, Jamshedpur"
+                  width="100%"
+                  height="400"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=One+Rep+Maax+Gym,+Dimna+Road,+Jamshedpur&output=embed"
+                  aria-label="Google Maps showing OneRepMaax Gym location at Dimna Road, Mango, Jamshedpur"
+                />
               }
             </div>
           </div>

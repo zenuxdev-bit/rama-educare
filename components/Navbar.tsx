@@ -1,17 +1,23 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CardNav from '@/components/CardNav'
-import logo from '@/public/logo.png';
+import logo from '@/public/logo.webp';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const isMenuOpenRef = useRef(false);
 
   useEffect(() => {
     let ticking = false;
 
     const handleScroll = () => {
+      // Don't auto-hide if menu is open
+      if (isMenuOpenRef.current) {
+        return;
+      }
+
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
@@ -43,6 +49,14 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [lastScrollY]);
+
+  const handleMenuToggle = (isOpen: boolean) => {
+    isMenuOpenRef.current = isOpen;
+    // Keep navbar visible when menu opens
+    if (isOpen) {
+      setIsVisible(true);
+    }
+  };
 
   const items = [
     {
@@ -93,6 +107,7 @@ const Navbar = () => {
         buttonBgColor="#111"
         buttonTextColor="#fff"
         ease="power3.out"
+        onMenuToggle={handleMenuToggle}
       />
     </div>
   );

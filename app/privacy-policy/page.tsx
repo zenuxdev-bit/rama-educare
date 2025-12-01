@@ -1,3 +1,14 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - RAMA Educare",
+  description: "Read our privacy policy to understand how RAMA Educare collects, uses, and protects your personal information during the admission counseling process.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] pt-20">
