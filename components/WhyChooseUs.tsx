@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
     },
     {
       title: "15+ Years of Excellence",
-      description: "Trusted expertise since 2010, helping 500+ students secure admissions to premier universities across India.",
+      description: "Trusted expertise since 2010, helping 500+ students secure admissions to premier universities across India with personalized guidance and support.",
       stat: "500+",
       label: "Students Guided",
       icon: "EXPERIENCE"

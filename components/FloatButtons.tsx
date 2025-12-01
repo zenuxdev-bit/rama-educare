@@ -34,7 +34,7 @@ export default function FloatButtons() {
           transition 
           duration-200 
           z-50
-          animate-glow
+          
         "
       >
         <FaWhatsapp size={32} />
@@ -60,7 +60,7 @@ export default function FloatButtons() {
           transition 
           duration-200 
           z-50
-          animate-glow
+        
         "
       >
         <FaPhoneAlt size={28} />

@@ -9,7 +9,6 @@ const EntranceMarquee = () => {
         { src: "exam/wbjee.webp", alt: "CUET"},
         { src: "exam/CUET-nta-logo-NEW-png-300x69.webp", alt: "BITSAT" },
         { src: "exam/iser.webp", alt: "COMEDK" },
-        { src: "exam/licensed-image.webp", alt: "WBJEE" },
         { src: "exam/mhecet.webp", alt: "CLAT" },
         { src: "exam/BITS_Pilani-Logo.webp", alt: "GMAT" },
         { src: "exam/jee.webp", alt: "JEE"},

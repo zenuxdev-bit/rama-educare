@@ -5,6 +5,7 @@ import type { StaticImageData } from 'next/image';
 import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
+import Link from 'next/link';
 
 type CardNavLink = {
   label: string;
@@ -196,13 +197,16 @@ const CardNav: React.FC<CardNavProps> = ({
             />
           </div>
 
+          
+          <Link href="/#contact">
+          <div>
           <button
             type="button"
-            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-4 items-center h-full font-medium cursor-pointer transition-colors duration-300"
+            className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] px-7 py-3 items-center h-full font-medium cursor-pointer transition-colors duration-300"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
             Get Started
-          </button>
+          </button></div></Link>
         </div>
 
         <div

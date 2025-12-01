@@ -378,16 +378,32 @@ export default function Contact() {
               </p>
             </div>
             <div className="w-full h-[400px] md:h-[500px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8762817733844!2d86.1853!3d22.8046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ4JzE2LjYiTiA4NsKwMTEnMDcuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+<iframe
+  title="Rama Educare Location - Jamshedpur"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.948224684655!2d86.2179468!3d22.8043823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e3001c7afdef%3A0xc6f1eb93b939ecca!2sRAMA%20EDUCARE!5e0!3m2!1sen!2sin!4v1764611664583!5m2!1sen!2sin"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
+
+              {/* Note: Replace the src URL with your actual Google Maps embed link */
+              
+              <iframe 
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px]  shadow-lg hover:shadow-xl transition-shadow duration-300"
+                title="OneRepMaax Gym Location - Dimna Road, Mango, Jamshedpur"
                 width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
+                height="400"
                 loading="lazy"
+                allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                // className="grayscale hover:grayscale-0 transition-all duration-300"
-              ></iframe>
+                src="https://www.google.com/maps?q=One+Rep+Maax+Gym,+Dimna+Road,+Jamshedpur&output=embed"
+                aria-label="Google Maps showing OneRepMaax Gym location at Dimna Road, Mango, Jamshedpur"
+              />
+              }
             </div>
           </div>
         </div>
