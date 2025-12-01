@@ -30,6 +30,26 @@ html {
   }
 }
 
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 6px rgba(0, 255, 0, 0.4), 0 0 10px rgba(0, 255, 0, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(36, 135, 144, 0.6), 0 0 20px rgba(44, 164, 219, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(123, 245, 229, 0.4), 0 0 10px rgba(100, 200, 193, 0.3);
+    transform: scale(1);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s infinite ease-in-out;
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

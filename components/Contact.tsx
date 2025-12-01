@@ -65,27 +65,48 @@ export default function Contact() {
     return isValid;
   };
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (validateForm()) {
-      console.log("Form submitted:", formData);
-      // Handle form submission here
-      alert("Thank you! We'll contact you soon.");
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        city: "",
-        entranceExam: "",
-        rank: "",
-        percentage: "",
-        school: "",
-        preferredCourse: "",
-        message: "",
-      });
-    }
-  };
+ const handleSubmit = (e: FormEvent) => {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  // Build WhatsApp message
+  const message =
+    `*New Counseling Request*\n\n` +
+    `*Name:* ${formData.name}\n` +
+    `*Email:* ${formData.email}\n` +
+    `*Phone:* ${formData.phone}\n` +
+    `*City:* ${formData.city || "N/A"}\n` +
+    `*Entrance Exam:* ${formData.entranceExam || "N/A"}\n` +
+    `*Rank:* ${formData.rank || "N/A"}\n` +
+    `*Percentage:* ${formData.percentage || "N/A"}\n` +
+    `*School:* ${formData.school || "N/A"}\n` +
+    `*Preferred Course:* ${formData.preferredCourse || "N/A"}\n` +
+    `*Message:* ${formData.message || "N/A"}`;
+
+  // Your WhatsApp number here (use only digits)
+  const phoneNumber = "919229556207"; // <--- CHANGE TO YOUR NUMBER
+
+  // Redirect to WhatsApp with message
+  const whatsappURL = `https://wa.me/${+919229556207}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappURL, "_blank");
+
+  // Reset form
+  setFormData({
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+    entranceExam: "",
+    rank: "",
+    percentage: "",
+    school: "",
+    preferredCourse: "",
+    message: "",
+  });
+};
 
   return (
     <section className="py-16 md:py-24 bg-[#FAFAFA] px-4">

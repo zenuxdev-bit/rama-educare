@@ -39,18 +39,22 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-[#64748B]">
               <p>
                 <span className="font-semibold text-[#334155]">Phone:</span>{" "}
-                <a href="tel:+911234567890" className="hover:text-[#1B4F8C]">
-                  +91 12345 67890
+                <a href="tel:+919288684938" className="hover:text-[#1B4F8C]">
+                  +91 90317 33144
                 </a>
               </p>
               <p>
                 <span className="font-semibold text-[#334155]">Email:</span>{" "}
-                <a href="mailto:info@ramaeducare.com" className="hover:text-[#1B4F8C]">
-                  info@ramaeducare.com
+                <a href="mailto:ramaeducare2010@gmail.com" className="hover:text-[#1B4F8C]">
+                 ramaeducare2010@gmail.com
                 </a>
               </p>
               <p>
-                <span className="font-semibold text-[#334155]">Address:</span> Jamshedpur, Jharkhand, India
+                <span className="font-semibold text-[#334155]">Address:</span> Rama Educare
+Jagannath Tower, 1st Floor
+Near Bhalubasa Chowk
+Jamshedpur – 831009
+Jamshedpur, Jharkhand, India
               </p>
             </div>
 

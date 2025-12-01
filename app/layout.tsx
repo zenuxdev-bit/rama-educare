@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
-
+import FloatButtons from "@/components/FloatButtons";
 import { Poppins } from 'next/font/google'
 import Navbar from "@/components/Navbar";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
@@ -49,6 +49,7 @@ export default function RootLayout({
         </div>
         <Navbar/>
         <main className={poppins.className}>{children}</main>
+          <FloatButtons />  
         <Footer />
 
       </body>

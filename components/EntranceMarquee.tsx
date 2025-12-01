@@ -4,20 +4,16 @@ import LogoLoop from '@/components/LogoLoop';
 
 const EntranceMarquee = () => {
     const entranceExams = [
-        { src: "/logo.png", alt: "JEE Main & Advanced", href: "#" },
-        { src: "/logo.png", alt: "NEET", href: "#" },
-        { src: "/logo.png", alt: "CUET", href: "#" },
-        { src: "/logo.png", alt: "BITSAT", href: "#" },
-        { src: "/logo.png", alt: "COMEDK", href: "#" },
-        { src: "/logo.png", alt: "WBJEE", href: "#" },
-        { src: "/logo.png", alt: "CLAT", href: "#" },
-        { src: "/logo.png", alt: "GMAT", href: "#" },
-        { src: "/logo.png", alt: "GATE", href: "#" },
-        { src: "/logo.png", alt: "XAT", href: "#" },
-        { src: "/logo.png", alt: "SAT", href: "#" },
-        { src: "/logo.png", alt: "MHTCET", href: "#" },
-        { src: "/logo.png", alt: "IISER IAT", href: "#" },
-        { src: "/logo.png", alt: "KCET", href: "#" },
+        { src: "exam/xat.webp", alt: "JEE Main & Advanced"},
+        { src: "exam/comet.webp", alt: "NEET"},
+        { src: "exam/wbjee.webp", alt: "CUET"},
+        { src: "exam/CUET-nta-logo-NEW-png-300x69.webp", alt: "BITSAT" },
+        { src: "exam/iser.webp", alt: "COMEDK" },
+        { src: "exam/licensed-image.webp", alt: "WBJEE" },
+        { src: "exam/mhecet.webp", alt: "CLAT" },
+        { src: "exam/BITS_Pilani-Logo.webp", alt: "GMAT" },
+        { src: "exam/jee.webp", alt: "JEE"},
+       
     ];
 
     return (
@@ -48,7 +44,7 @@ const EntranceMarquee = () => {
                         logos={entranceExams}
                         speed={60}
                         direction="left"
-                        logoHeight={64}
+                        logoHeight={100}
                         gap={80}
                         hoverSpeed={20}
                         scaleOnHover

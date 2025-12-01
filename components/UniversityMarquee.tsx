@@ -6,16 +6,20 @@ import {
 const UniversityMarquee = () => {
   // Placeholder university logos - replace src with actual university logo paths
   const universities = [
-    { name: "University 1", logo: "/universities/uni1.png" },
-    { name: "University 2", logo: "/universities/uni2.png" },
-    { name: "University 3", logo: "/universities/uni3.png" },
-    { name: "University 4", logo: "/universities/uni4.png" },
-    { name: "University 5", logo: "/universities/uni5.png" },
-    { name: "University 6", logo: "/universities/uni6.png" },
-    { name: "University 7", logo: "/universities/uni7.png" },
-    { name: "University 8", logo: "/universities/uni8.png" },
-    { name: "University 9", logo: "/universities/uni9.png" },
-    { name: "University 10", logo: "/universities/uni10.png" },
+    { name: "University 1", logo: "/university/u1.webp"},
+     { name: "University 4", logo: "/university/u4.webp"},
+    { name: "University 5", logo: "/university/u5.webp"},
+    { name: "University 6", logo: "/university/u6.webp"},
+    { name: "University 2", logo: "/university/u2.webp"},
+    { name: "University 3", logo: "/university/u3.webp"},
+    { name: "University 7", logo: "/university/u7.webp"},
+    { name: "University 8", logo: "/university/u8.webp"},
+    { name: "University 9", logo: "/university/u9.webp"},
+    { name: "University 10", logo: "/university/u10.webp" },
+    { name: "University 4", logo: "/university/u4.webp"},
+    { name: "University 5", logo: "/university/u5.webp"},
+    { name: "University 6", logo: "/university/u6.webp"},
+    
   ];
 
   return (
@@ -41,7 +45,7 @@ const UniversityMarquee = () => {
         <div className="relative">
           <ScrollVelocityContainer className="py-8">
             {/* First Row - Scrolling Right */}
-            <ScrollVelocityRow baseVelocity={1} direction={1}>
+            <ScrollVelocityRow baseVelocity={2} direction={1}>
               <div className="flex items-center gap-12 px-6">
                 {universities.map((uni, idx) => (
                   <div
@@ -51,7 +55,7 @@ const UniversityMarquee = () => {
                     <img
                       src={uni.logo}
                       alt={uni.name}
-                      className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                      className="max-h-full max-w-full object-contain "
                     />
                   </div>
                 ))}
@@ -59,17 +63,17 @@ const UniversityMarquee = () => {
             </ScrollVelocityRow>
 
             {/* Second Row - Scrolling Left */}
-            <ScrollVelocityRow baseVelocity={1} direction={-1}>
+            <ScrollVelocityRow baseVelocity={2} direction={-1}>
               <div className="flex items-center gap-12 px-6">
                 {universities.map((uni, idx) => (
                   <div
                     key={`row2-${idx}`}
-                    className="flex h-20 w-32 shrink-0 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white p-4 shadow-sm sm:h-24 sm:w-40"
+                    className="flex h-20 w-32 shrink-0 items-center justify-center rounded-lg border border-[#E2E8F0]  p-4 sm:h-24 sm:w-40"
                   >
                     <img
                       src={uni.logo}
                       alt={uni.name}
-                      className="max-h-full max-w-full object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                      className="max-h-full max-w-full object-contain "
                     />
                   </div>
                 ))}
